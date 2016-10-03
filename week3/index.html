@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Using $http Service</title>
+  </head>
+  <body ng-app='NarrowItDownApp'>
+    <h1>Prathap 3rd week submission</h1>
+
+    <div ng-controller='NarrowItDownController as nidCtrl'>
+
+      <input type="text" ng-model="nidCtrl.searchItem" placeholder="explore menu with your favorites, enjoy" ng-keyup="nidCtrl.clearMenuItems();">
+      <button ng-click="nidCtrl.showItems();">Narrow It Down For Me!</button>
+<br><br><br>
+      <div ng-if='nidCtrl.requiredMenuItems.length>0 && nidCtrl.searchItem'>
+        Items with {{nidCtrl.searchItem}} are
+
+        <ol >
+          <li ng-repeat = 'menuItem in nidCtrl.requiredMenuItems'>{{menuItem.name}}, {{menuitem.description}} <button ng-click='nidCtrl.removeItem($index);'>Don't want this one!</button></li>
+        </ul>
+      </div>
+      <div ng-if='nidCtrl.requiredMenuItems.length == 0'>
+          Nothing found
+      </div>
+    </div>
+  </body>
+</html>
