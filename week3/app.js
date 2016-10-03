@@ -4,7 +4,7 @@
 angular.module('NarrowItDownApp', [])
 .controller('NarrowItDownController', NarrowItDownController)
 .service('NarrowItDownService', NarrowItDownService)
-.constant('ApiBasePath', "http://davids-restaurant.herokuapp.com");
+.constant('ApiBasePath', "https://davids-restaurant.herokuapp.com");
 
 
 
@@ -67,8 +67,6 @@ function NarrowItDownController(NarrowItDownService) {
   nidCtrl.isMenuItemRequiredForSearch = function (menuItem, searchTerm){
     return menuItem.description.search(searchTerm);
   }
-
-
 }
 
 NarrowItDownService.$inject = ['$http', 'ApiBasePath']
